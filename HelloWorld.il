@@ -10,6 +10,14 @@
   .publickeytoken = (B7 7A 5C 56 19 34 E0 89 )                         // .z\V.4..
   .ver 4:0:0:0
 }
+
+// Reference System.Windows.Forms
+.assembly extern System.Windows.Forms
+{
+  .publickeytoken = (B7 7A 5C 56 19 34 E0 89 )
+  .ver 4:0:0:0
+}
+
 .assembly HelloWrold
 {
   .custom instance void [mscorlib]System.Runtime.CompilerServices.CompilationRelaxationsAttribute::.ctor(int32) = ( 01 00 08 00 00 00 00 00 ) 
@@ -81,13 +89,22 @@
 .class public auto ansi beforefieldinit HelloWorld.Program
        extends [mscorlib]System.Object
 {
+
+  // The Main class Defined here
+
   .method public hidebysig static void  Main(string[] args) cil managed
   {
     .entrypoint
     // Code size       2 (0x2)
     .maxstack  8
-    IL_0000:  nop
-    IL_0001:  ret
+    // This is message I want to show from MessageBox.
+    ldstr "Hello World!\nWelcome to app"
+
+    // Call MessageBox's Show method here
+    call valuetype [System.Window.Forms] System.Windows.Forms.DialogResult [System.Windows.Forms] System.Windows.Forms.MessageBox::Show(string)
+
+    get_empty_stack: pop
+    return: ret
   } // end of method Program::Main
 
   .method public hidebysig specialname rtspecialname 
