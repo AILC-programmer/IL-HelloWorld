@@ -101,7 +101,7 @@
     ldstr "Hello World!\nWelcome to app"
 
     // Call MessageBox's Show method here
-    call valuetype [System.Window.Forms] System.Windows.Forms.DialogResult [System.Windows.Forms] System.Windows.Forms.MessageBox::Show(string)
+    call valuetype [System.Windows.Forms] System.Windows.Forms.DialogResult [System.Windows.Forms] System.Windows.Forms.MessageBox::Show(string)
 
     get_empty_stack: pop
     return: ret
